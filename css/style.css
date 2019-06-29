@@ -1,0 +1,186 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Alegreya Sans SC', 'Khula', sans-serif;
+}
+
+.navbar-brand {
+    margin-top: 0;
+}
+
+.wrapper {
+    width: 100%;
+    perspective: 25px;
+
+}
+
+nav {
+    height: 100px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 5;
+}
+.header {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-image: radial-gradient(ellipse at bottom, rgb(1, 53, 114) 0%,rgb(1, 10, 9) 60%,rgba(0,0,0,1) 100%);
+    overflow: hidden;
+}
+
+.info {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: absolute;
+    padding: 50px;
+    right: 40px;
+    top: 100px;
+    z-index: 2;
+}
+
+@keyframes h1fadein {
+    0% {
+        opacity: 0;
+        filter: contrast(0%);
+    }
+
+    100% {
+        opacity: 1;
+        filter: contrast(100%);
+    }
+}
+
+.info h1 {
+    color: transparent;
+    font-size: 8rem;
+    font-weight: 800;
+    white-space: nowrap;
+    -webkit-background-clip: text;
+    background-image: linear-gradient(to bottom, #ffffffef 30%, #00272c4f 80%), url(https://protectsingapore.files.wordpress.com/2011/10/grunge.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: contrast(90%);
+    animation: h1fadein 2s backwards;
+    animation-delay: 1s;
+    }
+
+.info p {
+    color: white;
+    font-size: 1.5rem;
+    margin-top: -35px;
+    animation: h1fadein 2s backwards;
+    animation-delay: 2s;
+}
+
+.header-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin-left: -20px;
+    overflow: hidden;
+}
+
+.scream {
+    height: 70%;
+    width: 28%;
+    position: absolute; 
+    right: 40px;
+    bottom: -600px;
+    background-image: url(../img/scream.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    z-index: 2;
+    animation: scream 2s forwards;
+    animation-delay: 2s;
+    filter: grayscale(50%);
+}
+
+@keyframes scream {
+    to {
+        bottom: 50px;
+    }
+}
+
+.fog {
+background-image: url(../img/fog.png);
+height: 100%;
+background-size: cover;
+animation: fog 60s alternate;
+}
+
+@keyframes fog {
+    0% {
+        transform: translate3d(0, 0, 1vw);
+    }
+    100% {
+        transform: translate3d(0, 0, 0vw);
+    }
+}
+
+.zombies {
+    width: 90%;
+    height: 35%;
+    position: absolute;
+    left: 0;
+    bottom: -1000px;
+    background-image: url(../img/zombies.svg);
+    background-size: cover;
+    background-position-x: right;
+    animation: floor 2s forwards;
+    animation-delay: 2.5s;
+}
+.floor {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -1000px;
+    background-image: linear-gradient(to top, #10014741, #00000000), url(../img/floor.svg);
+    background-size: cover;
+    background-position-x: center;
+    animation: floor 2s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes floor {
+    to {
+        bottom: -50px;
+    }
+}
+
+@media only screen and (max-width : 900px) {
+    .info {
+    width: 60%;
+    align-items: flex-start;
+        }
+
+    .info h1{
+        font-size: 2.9rem;
+        white-space: nowrap;
+    }
+
+    .scream {
+        transform: scale(2);
+    }
+}
+
+.content {
+    width: 100%;
+    height: 50vh;
+    background: red;
+}
+.hands {
+    background-color: green;
+    width: 100%;
+    height: 50vh;
+}
